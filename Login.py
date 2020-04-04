@@ -1,25 +1,19 @@
+from lpass_check import pass_check
+
 def login():
-    correct = False
     print("Welcome to Module Attendance Records")
     print("====================================")
-    while not correct:
-        Lname = input("Please provide your login name...")
-        Lpassw = input("Please provide you user password...")
-        correct = login_check(Lname, Lpassw)
-    MainMenu(Lname)
+    Lname = input("Please provide your login name...")
+    Lpassw = input("Please provide you user password...")
+    pass_check(Lname, Lpassw)
 
+# the same as login(), but used when a login/pass is incorrect
+# Doesn't have the welcome greeting
+def login_two():
+    Lname = input("Please provide your login name...")
+    Lpassw = input("Please provide you user password...")
+    lpass_check.pass_check(Lname, Lpassw)
 
-def login_check(NameV, Password):
-    correct = False
-    for line in open("Login_data.txt","r").readlines():
-        login_info = line.split(",")
-        if NameV == login_info[0] and Password == login_info[1]:
-            print("Valid credentials! Directing you to the main menu")
-            correct = True
-    if not correct:
-        print("Invalid credentials, please try again")
-        return False
-    else: return True
 
 
 def MainMenu(Lname):
