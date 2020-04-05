@@ -1,5 +1,5 @@
-import Login
 import Load_data
+import Main_Menu
 
 
 # to check the login/password, we will need 4 bits of data
@@ -12,26 +12,31 @@ import Load_data
 
 def pass_check(u_lname, u_lpass):
     # get the lists from 'Load data'
-    name_l, pass_l = Load_data.load_data
+    name_l, pass_l = Load_data.load_data()
     # create a variable as false to handle no True return
-    state = False
     # start a for loop to match the login name and get its index number
+    state = "yes"
     for i, lname in enumerate(name_l):
         if u_lname == lname:
             # change the check variable to True
-            state = True
             # if the username exists in the list, return it's index
-            return i
-    if state:
-        # if true, send it off for the password to be checked
-        # send the index, the user's password and the password list
-        final_check(i, u_lpass, pass_l, u_lname)
-    else:
+            final_check(i, u_lpass, pass_l, u_lname)
+            state = "not"
+            # state gets changed to different string
+            # if the wrong name is used, the state will remain 'yes' and prompt again for login
+    if state == "yes":
         print("Login doesn't exist, please try again")
         # send's you back to the login again
         # uses the login without the introduction
-        Login.login_two()
+        login_two()
 
+
+# the same as login(), but used when a login/pass is incorrect
+# Doesn't have the welcome greeting
+def login_two():
+    Lname = input("Please provide your login name...")
+    Lpassw = input("Please provide you user password...")
+    pass_check(Lname, Lpassw)
 
 # The final check finds the associated password for the login by index
 # If else statement used
@@ -42,7 +47,7 @@ def final_check(i, u_lpass, pass_l, u_lname):
     fpass = pass_l[i]
     if (u_lpass == fpass):
         print("Password correct, redirecting you to the main menu...")
-        Login.MainMenu(u_lname)
+        Main_Menu.main_menu(u_lname)
     else:
         print("Password incorrect, please enter your credentials again")
-        # login_two()
+        login_two()
