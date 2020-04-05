@@ -1,0 +1,4 @@
+student_name,latest_stat,no_present,no_absent,no_excuse
+Mary Martin,1,5,0,1
+Alan Wilson,2,2,4,0
+Alan Lowe,3,6,0,1

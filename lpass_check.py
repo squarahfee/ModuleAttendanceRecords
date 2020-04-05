@@ -1,7 +1,6 @@
 import Load_data
 import Main_Menu
 
-
 # to check the login/password, we will need 4 bits of data
 # 1. User's input login name = (u_lname)
 # 2. User's input password  = (u_lpass)

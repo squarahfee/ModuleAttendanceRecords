@@ -1,3 +1,6 @@
+import Record_Attendance
+import Generate_Statistics
+
 def main_menu(Lname):
     print("Main Menu")
     print("====================================")
@@ -19,15 +22,12 @@ def main_menu(Lname):
         else:
             print("Not a valid choice, Please try a number and press enter")
     if choice == 1:
-        record_attendance()
+        Record_Attendance.record_attendance()
     elif choice == 2:
-        generate_statistics()
+        Generate_Statistics.generate_statistics()
     elif choice == 3:
         print("Good bye")
         exit()
 
-def record_attendance():
-    print("Record attendance")
 
-def generate_statistics():
-    print("Generate Statistics")
+
