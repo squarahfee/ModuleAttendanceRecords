@@ -22,9 +22,9 @@ def main_menu(Lname):
         else:
             print("Not a valid choice, Please try a number and press enter")
     if choice == 1:
-        Record_Attendance.record_attendance()
+        Record_Attendance.record_attendance(Lname)
     elif choice == 2:
-        Generate_Statistics.generate_statistics()
+        Generate_Statistics.generate_statistics(Lname)
     elif choice == 3:
         print("Good bye")
         exit()
