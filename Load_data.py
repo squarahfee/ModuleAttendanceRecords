@@ -27,6 +27,7 @@ def load_attendees(student_data):
         no_present.append(line_info[2])
         no_absent.append(line_info[3])
         no_excuse.append(line_info[4])
+    data_file.close()
     return student_name, latest_stat, no_present, no_absent, no_excuse
 
 # Loads Module data

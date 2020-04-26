@@ -1,3 +1,3 @@
-Mary Martin,1,5,0,1
-Alan Wilson,2,2,4,0
-Alan Lowe,3,6,0,1
+Mary Martin,10,5,3,1
+Ian Wilson,10,2,4,4
+Alan Lowe,10,6,3,1
